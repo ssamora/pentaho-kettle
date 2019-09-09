@@ -23,7 +23,7 @@
         <div class="edit" ng-click="vm.onEditClick(section.editLink)"></div>
       </div>
       <div class="group_holder">
-        <div class="group" ng-repeat="(key, value) in section.mapping">
+        <div class="group" ng-repeat="(key, value) in section.mapping" ng-if="section.mapping[key] != section.mapping.password">
           <div class="label">{{section.mapping[key]}}</div>
           <div class="value" title="{{vm.data.model[key]}}">
             {{section.filters[key]?section.filters[key](vm.data.model[key]):vm.data.model[key]}}
